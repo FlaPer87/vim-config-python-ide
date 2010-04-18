@@ -14,6 +14,7 @@ function! s:swap_up()
     call s:swap_lines(n, n - 1)
     exec n - 1
 endfunction
+noremap <silent> <a-up> :call <SID>swap_up()<CR>
 
 function! s:swap_down()
     let n = line('.')
@@ -24,6 +25,7 @@ function! s:swap_down()
     call s:swap_lines(n, n + 1)
     exec n + 1
 endfunction
+noremap <silent> <a-down> :call <SID>swap_down()<CR>
 
-noremap <silent> <c-a-up> :call <SID>swap_up()<CR>
-noremap <silent> <c-a-down> :call <SID>swap_down()<CR>
+noremap <silent> <c-a-up>  yyP
+noremap <silent> <c-a-down>  yyp
