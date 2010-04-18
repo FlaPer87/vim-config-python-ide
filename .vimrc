@@ -82,6 +82,9 @@ set encoding=utf-8
 let python_highlight_all=1
 syntax on
 
+" Lets use our colorscheme
+colorscheme flaper87
+
 " Automatically indent based on file type: 
 "filetype indent on
 " Keep indentation level from previous line: 
