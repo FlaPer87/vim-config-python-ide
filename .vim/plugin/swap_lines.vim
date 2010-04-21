@@ -25,7 +25,12 @@ function! s:swap_down()
     call s:swap_lines(n, n + 1)
     exec n + 1
 endfunction
+
 noremap <silent> <a-down> :call <SID>swap_down()<CR>
 
-noremap <silent> <c-a-up>  yyP
+
 noremap <silent> <c-a-down>  yyp
+noremap <silent> <c-a-up>  yyP
+vnoremap <silent> <c-a-up> ykP
+vnoremap <silent> <c-a-down> y'>jp
+
