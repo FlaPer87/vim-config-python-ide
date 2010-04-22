@@ -118,11 +118,11 @@ set softtabstop=4
 " set noic "no ignore case
 " set t_Co=256
 
-set cursorline
+" set cursorline
 set laststatus=2
 "set clipboard=unnamed
 "set go+=a
-vnoremap y "+y
+" vnoremap y "+y
 "set paste
 se nu
 set mouse=a
