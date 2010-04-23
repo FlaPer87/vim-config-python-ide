@@ -110,6 +110,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 " setlocal tabstop=4
 set softtabstop=4
+set autoindent
 " setlocal shiftwidth=4
 " setlocal textwidth=80
 " setlocal smarttab
@@ -126,3 +127,4 @@ set laststatus=2
 "set paste
 se nu
 set mouse=a
+set nowrap
