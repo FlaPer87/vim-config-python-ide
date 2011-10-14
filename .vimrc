@@ -126,13 +126,6 @@ set autoindent
 set laststatus=2
 "set clipboard=unnamed
 "set go+=a
-<<<<<<< HEAD
-" vnoremap y "+y
-"set paste
-se nu
-set mouse=a
-set nowrap
-=======
 "vnoremap y "+y
 "set paste
 se nu
@@ -159,4 +152,3 @@ endif
 set vb
 
 
->>>>>>> 53e6d3ba18629f668f2f41bcdc3e67245f65818d
