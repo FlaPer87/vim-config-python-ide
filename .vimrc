@@ -17,7 +17,7 @@
 
 " Number of spaces that a pre-existing tab is equal to.
 " For the amount of space used for a new tab use shiftwidth.
-au BufRead,BufNewFile *py,*pyw,*.c,*.h,*html set tabstop=8
+au BufRead,BufNewFile *py,*pyw,*.c,*.h,*html,*js set tabstop=8
 
 " What to use for an indent.
 " This will affect Ctrl-T and 'autoindent'.
@@ -46,9 +46,12 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Wrap text after a certain number of characters
-" Python: 79 
+" Python: No limit
 " C: 79
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h set textwidth=79
+" Uncomment this if you want to limit your textwidth in python
+" can be very annoying ..
+" au BufRead,BufNewFile *.py,*.pyc set textwidth=79
+au BufRead,BufNewFile *.c,*.h set textwidth=79
 
 " Turn off settings in 'formatoptions' relating to comment formatting.
 " - c : do not automatically insert the comment leader when wrapping based on
@@ -123,8 +126,37 @@ set autoindent
 set laststatus=2
 "set clipboard=unnamed
 "set go+=a
+<<<<<<< HEAD
 " vnoremap y "+y
 "set paste
 se nu
 set mouse=a
 set nowrap
+=======
+"vnoremap y "+y
+"set paste
+se nu
+set mouse=a
+set background=dark
+
+"http://vim.wikia.com/wiki/In_line_copy_and_paste_to_system_clipboard
+"sudo apt-get install xclip
+vmap <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+
+
+"This should be in /etc/vim/vimrc or wherever you global vimrc is.
+"But, if not, I for one can't live without it.
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" for things that are particular to this user/computer,
+" you can add commands to a .local_vim file in your home dir
+" and uncommenting the following
+" source .local_vim
+
+set vb
+
+
+>>>>>>> 53e6d3ba18629f668f2f41bcdc3e67245f65818d
